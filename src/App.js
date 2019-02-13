@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './components/Header';
 import MainSection from './components/MainSection';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -42,10 +43,10 @@ class App extends Component {
             </div>
           </form>
         </MainSection>
-        <footer>
+        <Footer>
           <button className="button secondary-action">Back</button>
           <button className="button main-action">Next</button>
-        </footer>
+        </Footer>
       </main>
     );
   }
