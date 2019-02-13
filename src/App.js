@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class App extends Component {
   render() {
     return (
-      <>
+      <main>
         <header>
           <img className="activity-avatar" src="https://www.fillmurray.com/40/40" />
           <div className="activity-wrapper">
@@ -48,10 +48,10 @@ class App extends Component {
           </form>
         </section>
         <footer>
-          <button>Back</button>
-          <button>Next</button>
+          <button className="button secondary-action">Back</button>
+          <button className="button main-action">Next</button>
         </footer>
-      </>
+      </main>
     );
   }
 }
