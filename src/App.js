@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 import Header from './components/Header';
+import MainSection from './components/MainSection';
 
 class App extends Component {
   render() {
     return (
       <main>
         <Header />
-        <section>
+        <MainSection>
           <h1>About your activity</h1>
           <form className="base-form">
             <div className="form-field">
@@ -40,7 +41,7 @@ class App extends Component {
               <input type="text" name="activity_phone_number" />
             </div>
           </form>
-        </section>
+        </MainSection>
         <footer>
           <button className="button secondary-action">Back</button>
           <button className="button main-action">Next</button>
