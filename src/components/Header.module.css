@@ -1,0 +1,29 @@
+.header {
+  background-color: #f1f3f5;
+  display: flex;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+.activityAvatar {
+  border-radius: 50%;
+  height: 40px;
+  margin-right: 16px;
+  width: 40px;
+}
+
+.h1 {
+  color: #657885;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: -.15px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.link {
+  color: #00A5E6;
+  letter-spacing: -.15px;
+  line-height: 20px;
+  text-decoration: none;
+}

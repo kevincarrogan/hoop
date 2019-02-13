@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 
+import Header from './components/Header';
+
 class App extends Component {
   render() {
     return (
       <main>
-        <header>
-          <img className="activity-avatar" src="https://www.fillmurray.com/40/40" />
-          <div className="activity-wrapper">
-            <h1>Mr Boing's Trampoline Club</h1>
-            <nav>
-              <a href="#">Back to Your Activities</a>
-            </nav>
-          </div>
-        </header>
+        <Header />
         <section>
           <h1>About your activity</h1>
           <form className="base-form">
