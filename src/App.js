@@ -5,11 +5,13 @@ class App extends Component {
     return (
       <>
         <header>
-          <img className="avatar" src="https://www.fillmurray.com/40/40" />
-          <h1>Mr Boing's Trampoline Club</h1>
-          <nav>
-            <a href="#">Back to Your Activities</a>
-          </nav>
+          <img className="activity-avatar" src="https://www.fillmurray.com/40/40" />
+          <div className="activity-wrapper">
+            <h1>Mr Boing's Trampoline Club</h1>
+            <nav>
+              <a href="#">Back to Your Activities</a>
+            </nav>
+          </div>
         </header>
         <section>
           <h1>About your activity</h1>
