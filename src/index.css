@@ -32,64 +32,6 @@ footer .secondary-action {
   min-width: 88px;
 }
 
-.base-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 28px;
-}
-
-.form-field label {  
-  color: #25333d;
-  font-weight: bold;
-  letter-spacing: -.15px;
-  line-height: 20px;
-  margin-bottom: 8px;
-}
-
-.form-field input, .form-field select {
-  border: 2px solid rgba(171,185,194,0.32);
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 14px;
-  height: 40px;
-  padding: 12px;
-}
-
-.form-field select {
-  background-color: inherit;
-  color: #879299;
-  margin-bottom: 8px;
-  padding: 0 12px;
-}
-
-.form-field .instructions {
-  color: #879299;
-  letter-spacing: -.15px;
-  line-height: 20px;
-  margin: 0;
-  margin-bottom: 8px;
-}
-
-.form-field .label-wrapper {
-  display: flex;
-  margin-bottom: 8px;
-}
-
-.form-field .label-wrapper label {
-  flex: 1;
-}
-
-.form-field .optional {
-  color: #879299;
-  letter-spacing: -.15px;
-  line-height: 20px;
-}
-
 .button {
   border-radius: 4px;
   font-size: 16px;
