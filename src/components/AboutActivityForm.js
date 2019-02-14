@@ -43,7 +43,9 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
 };
 
 AboutActivityForm = reduxForm({
-  form: 'activity'
+  form: 'activity',
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true
 })(AboutActivityForm);
 
 export default AboutActivityForm;

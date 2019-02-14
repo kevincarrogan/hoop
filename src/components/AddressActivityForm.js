@@ -3,9 +3,7 @@ import { reduxForm, Form, Field } from 'redux-form';
 
 import './Form.css';
 
-const onSubmit = () => {};
-
-let AddressActivityForm = ({ id, handleSubmit }) => (
+let AddressActivityForm = ({ id, handleSubmit, onSubmit }) => (
   <Form id={id} className="base-form" onSubmit={handleSubmit(onSubmit)}>
     <div className="form-field">
       <label htmlFor="placeName">Place name</label>
@@ -54,7 +52,9 @@ let AddressActivityForm = ({ id, handleSubmit }) => (
 );
 
 AddressActivityForm = reduxForm({
-  form: 'activity'
+  form: 'activity',
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true
 })(AddressActivityForm);
 
 export default AddressActivityForm;
