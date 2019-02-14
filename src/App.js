@@ -5,6 +5,7 @@ import MainSection from './components/MainSection';
 import Footer from './components/Footer';
 
 import AboutActivityForm from './components/AboutActivityForm';
+import AddressActivityForm from './components/AddressActivityForm';
 
 class App extends Component {
   render() {
@@ -13,8 +14,7 @@ class App extends Component {
       <main>
         <Header />
         <MainSection>
-          <h1>About your activity</h1>
-          <AboutActivityForm id={aboutActivityFormId} />
+          <AddressActivityForm id={aboutActivityFormId} />
         </MainSection>
         <Footer>
           <button className="button secondary-action">Back</button>
