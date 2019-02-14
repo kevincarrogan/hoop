@@ -1,39 +1,46 @@
 import React from 'react';
+import { reduxForm, Form, Field } from 'redux-form';
 
 import './Form.css';
 
-const AboutActivityForm = () => (
-  <form className="base-form">
+const onSubmit = () => {};
+
+let AboutActivityForm = ({ id, handleSubmit }) => (
+  <Form id={id} className="base-form" onSubmit={handleSubmit(onSubmit)}>
     <div className="form-field">
-      <label>Activity Name</label>
-      <input type="text" name="activity_name" />
+      <label htmlFor="name">Activity Name</label>
+      <Field name="name" component="input" type="text" />
     </div>
     <div className="form-field">
       <label>Recommended Age</label>
-      <select>
+      <Field name="recommendedAgeFrom" component="select">
         <option>From</option>
-        <option>2</option>
-        <option>3</option>
-      </select>
-      <select>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </Field>
+      <Field name="recommendedAgeTo" component="select">
         <option>To</option>
-        <option>2</option>
-        <option>3</option>
-      </select>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </Field>
     </div>
     <div className="form-field">
-      <label>Activity Webpage</label>
+      <label htmlFor="webpage">Activity Webpage</label>
       <p className="instructions">Use a specific page if possible. Try to avoid homepage links.</p>
-      <input type="text" name="activity_webpage" placeholder="e.g. example.com/actiivty" />
+      <Field name="webpage" component="input" type="text" placeholder="e.g. example.com/activity" />
     </div>
     <div className="form-field">
       <div className="label-wrapper">
-        <label>Activity Phone Number</label>
+        <label htmlFor="phoneNumber">Activity Phone Number</label>
         <span className="optional">Optional</span>
       </div>
-      <input type="text" name="activity_phone_number" />
+      <Field name="phoneNumber" component="input" type="text" />
     </div>
-  </form>
+  </Form>
 );
+
+AboutActivityForm = reduxForm({
+  form: 'activity'
+})(AboutActivityForm);
 
 export default AboutActivityForm;
