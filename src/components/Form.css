@@ -55,3 +55,16 @@
   letter-spacing: -.15px;
   line-height: 20px;
 }
+
+.form-field.error input {
+  border-color: #F45918;
+}
+
+.form-field.error label {
+  color: #F45918;
+}
+
+.form-field .error-message {
+  color: #F45918;
+  font-weight: bold;
+}
