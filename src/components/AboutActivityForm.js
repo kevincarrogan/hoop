@@ -1,7 +1,7 @@
 import React from 'react';
 import { reduxForm, Form, Field } from 'redux-form';
 
-import classNames from 'classnames';
+import FormField from './FormField.js';
 
 import './Form.css';
 
@@ -34,32 +34,6 @@ const validate = values => {
   }
 
   return errors;
-};
-
-let FormField = ({
-  input,
-  label,
-  type,
-  placeholder,
-  instructions,
-  meta: { touched, error }
-}) => {
-  let className = classNames('form-field', {error: touched && error});
-  let inputElement;
-
-  switch (type) {
-    default:
-      inputElement = <input {...input} placeholder={placeholder} id={input.name} type={type} />;
-  }
-
-  return (
-    <div className={className}>
-      <label htmlFor={input.name}>{label}</label>
-      {instructions && <p className="instructions">{instructions}</p>}
-      {inputElement}
-      {error && touched && <div className="error-message">{error}</div>}
-    </div>
-  );
 };
 
 let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
