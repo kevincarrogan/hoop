@@ -2,7 +2,9 @@ import React from 'react';
 
 const MainSection = ({children}) => (
   <section>
-    {children}
+    <div className="section-wrapper">
+        {children}
+    </div>
   </section>
 );
 

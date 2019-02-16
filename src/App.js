@@ -15,10 +15,7 @@ class App extends Component {
         <MainSection>
           <ActivityForm id={activityFormId} />
         </MainSection>
-        <Footer>
-          <button className="button secondary-action">Back</button>
-          <button form={activityFormId} className="button main-action">Next</button>
-        </Footer>
+        <Footer formId={activityFormId} />
       </main>
     );
   }
