@@ -25,7 +25,7 @@ const validate = values => {
     let ageTo = parseInt(values.recommendedAgeTo, 10);
 
     if (ageTo < ageFrom) {
-      errors.age = "We think you've got the ages the wrong way around.";
+      errors.recommendedAgeTo = "We think you've got the ages the wrong way around.";
     }
   }
 
@@ -55,7 +55,7 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
             type="select"
             grouped={true}
           >
-            <option>From</option>
+            <option value="">From</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -73,7 +73,7 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
             type="select"
             grouped={true}
           >
-            <option>To</option>
+            <option value="">To</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
