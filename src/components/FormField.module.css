@@ -9,7 +9,6 @@
   font-weight: bold;
   letter-spacing: -.15px;
   line-height: 20px;
-  margin-bottom: 8px;
 }
 
 .input, .select {
@@ -36,12 +35,12 @@
   margin-bottom: 8px;
 }
 
-.label-wrapper {
+.labelWrapper {
   display: flex;
   margin-bottom: 8px;
 }
 
-.label-wrapper label {
+.labelWrapper label {
   flex: 1;
 }
 
