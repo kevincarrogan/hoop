@@ -6,6 +6,20 @@ import { FormField } from './FormField.js';
 
 import './Form.css';
 
+const validate = values => {
+  const errors = {};
+
+  if (!values.placeName) {
+    errors.placeName = 'Required';
+  }
+
+  if (!values.postcode) {
+    errors.postcode = 'Required';
+  }
+
+  return errors;
+};
+
 let AddressActivityForm = ({ id, handleSubmit, onSubmit }) => (
   <Form id={id} className="base-form" onSubmit={handleSubmit(onSubmit)}>
     <Field
@@ -67,7 +81,8 @@ let AddressActivityForm = ({ id, handleSubmit, onSubmit }) => (
 AddressActivityForm = reduxForm({
   form: 'activity',
   destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true
+  forceUnregisterOnUnmount: true,
+  validate,
 })(AddressActivityForm);
 
 export default AddressActivityForm;
