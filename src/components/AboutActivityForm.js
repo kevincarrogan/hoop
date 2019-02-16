@@ -40,6 +40,8 @@ let FormField = ({
   input,
   label,
   type,
+  placeholder,
+  instructions,
   meta: { touched, error }
 }) => {
   let className = classNames('form-field', {error: touched && error});
@@ -47,12 +49,13 @@ let FormField = ({
 
   switch (type) {
     default:
-      inputElement = <input {...input} id={input.name} type={type} />;
+      inputElement = <input {...input} placeholder={placeholder} id={input.name} type={type} />;
   }
 
   return (
     <div className={className}>
       <label htmlFor={input.name}>{label}</label>
+      {instructions && <p className="instructions">{instructions}</p>}
       {inputElement}
       {error && touched && <div className="error-message">{error}</div>}
     </div>
@@ -64,7 +67,13 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
     <>
       <h1>About your activity</h1>
       <Form id={id} className="base-form" onSubmit={handleSubmit(onSubmit)}>
-        <Field label="Activity Name" name="name" component={FormField} type="text" />
+        <Field
+          label="Activity Name"
+          name="name"
+          component={FormField}
+          type="text"
+        />
+
         <div className="form-field">
           <label>Recommended Age</label>
           <Field id="recommendedAgeFrom" name="recommendedAgeFrom" component="select">
@@ -78,18 +87,22 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
             <option value="3">3</option>
           </Field>
         </div>
-        <div className="form-field">
-          <label htmlFor="webpage">Activity Webpage</label>
-          <p className="instructions">Use a specific page if possible. Try to avoid homepage links.</p>
-          <Field id="webpage" name="webpage" component="input" type="text" placeholder="e.g. example.com/activity" />
-        </div>
-        <div className="form-field">
-          <div className="label-wrapper">
-            <label htmlFor="phoneNumber">Activity Phone Number</label>
-            <span className="optional">Optional</span>
-          </div>
-          <Field id="phoneNumber" name="phoneNumber" component="input" type="text" />
-        </div>
+
+        <Field
+          label="Activity Webpage"
+          name="webpage" 
+          component={FormField}
+          placeholder="e.g. example.com/activity"
+          instructions="Use a specific page if possible. Try to avoid homepage links."
+          type="text"
+        />
+
+        <Field
+          label="Activity Phone Number"
+          name="phoneNumber"
+          component={FormField}
+          type="text"
+        />
       </Form>
     </>
   );
