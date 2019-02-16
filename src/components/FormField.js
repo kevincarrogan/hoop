@@ -4,6 +4,17 @@ import classNames from 'classnames';
 
 import styles from './FormField.module.css';
 
+const GroupedField = ({label, children}) => {
+  return (
+    <div className={styles.groupedField}>
+      <div className={styles.labelWrapper}>
+        <label className={styles.label}>{label}</label>
+      </div>
+      {children}
+    </div>
+  );
+};
+
 const FormField = ({
   input,
   label,
@@ -11,12 +22,22 @@ const FormField = ({
   placeholder,
   instructions,
   optional,
+  children,
+  grouped,
   meta: { touched, error }
 }) => {
-  const className = classNames(styles.formField, {[styles.error]: touched && error});
+  const className = classNames(
+    styles.formField,
+    {
+      [styles.error]: touched && error,
+      [styles.grouped]: !!grouped
+    });
   let inputElement;
 
   switch (type) {
+    case 'select':
+      inputElement = <select {...input} className={styles.select}>{children}</select>
+      break
     default:
       inputElement = <input {...input} className={styles.input} placeholder={placeholder} id={input.name} type={type} />;
   }
@@ -34,4 +55,4 @@ const FormField = ({
   );
 };
 
-export default FormField;
+export {GroupedField, FormField};

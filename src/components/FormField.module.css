@@ -50,7 +50,7 @@
   line-height: 20px;
 }
 
-.error input {
+.error input, .error select {
   border-color: #F45918;
 }
 
@@ -61,4 +61,12 @@
 .errorMessage {
   color: #F45918;
   font-weight: bold;
+}
+
+.grouped {
+  margin-bottom: 0;
+}
+
+.groupedField {
+  margin-bottom: 28px;
 }

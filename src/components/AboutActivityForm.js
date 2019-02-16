@@ -1,7 +1,7 @@
 import React from 'react';
 import { reduxForm, Form, Field } from 'redux-form';
 
-import FormField from './FormField.js';
+import { GroupedField, FormField } from './FormField.js';
 
 import './Form.css';
 
@@ -48,19 +48,44 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
           type="text"
         />
 
-        <div className="form-field">
-          <label>Recommended Age</label>
-          <Field id="recommendedAgeFrom" name="recommendedAgeFrom" component="select">
+        <GroupedField label="Recommended Age">
+          <Field
+            name="recommendedAgeFrom"
+            component={FormField}
+            type="select"
+            grouped={true}
+          >
             <option>From</option>
             <option value="2">2</option>
             <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
           </Field>
-          <Field name="recommendedAgeTo" component="select">
+          <Field
+            name="recommendedAgeTo"
+            component={FormField}
+            type="select"
+            grouped={true}
+          >
             <option>To</option>
             <option value="2">2</option>
             <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
           </Field>
-        </div>
+        </GroupedField>
 
         <Field
           label="Activity Webpage"
