@@ -2,28 +2,32 @@ import React from 'react';
 
 import classNames from 'classnames';
 
+import styles from './FormField.module.css';
+
 const FormField = ({
   input,
   label,
   type,
   placeholder,
   instructions,
+  optional,
   meta: { touched, error }
 }) => {
-  const className = classNames('form-field', {error: touched && error});
+  const className = classNames(styles.formField, {[styles.error]: touched && error});
   let inputElement;
 
   switch (type) {
     default:
-      inputElement = <input {...input} placeholder={placeholder} id={input.name} type={type} />;
+      inputElement = <input {...input} className={styles.input} placeholder={placeholder} id={input.name} type={type} />;
   }
 
   return (
     <div className={className}>
-      <label htmlFor={input.name}>{label}</label>
-      {instructions && <p className="instructions">{instructions}</p>}
+      <label className={styles.label} htmlFor={input.name}>{label}</label>
+      {optional && <span className={styles.optional}>Optional</span>}
+      {instructions && <p className={styles.instructions}>{instructions}</p>}
       {inputElement}
-      {error && touched && <div className="error-message">{error}</div>}
+      {error && touched && <div className={styles.errorMessage}>{error}</div>}
     </div>
   );
 };

@@ -76,6 +76,7 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
           name="phoneNumber"
           component={FormField}
           type="text"
+          optional={true}
         />
       </Form>
     </>
