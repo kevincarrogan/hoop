@@ -70,3 +70,18 @@
 .groupedField {
   margin-bottom: 28px;
 }
+
+@media (min-width: 728px) {
+  .groupedFieldFieldsWrapper {
+    display: flex;
+  }
+
+  .groupedFieldFieldsWrapper .formField {
+    margin-right: 24px;
+    width: 50%;
+  }
+
+  .groupedFieldFieldsWrapper .formField:last-of-type {
+    margin-right: 0;
+  }
+}

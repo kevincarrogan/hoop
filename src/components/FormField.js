@@ -10,7 +10,9 @@ const GroupedField = ({label, children}) => {
       <div className={styles.labelWrapper}>
         <label className={styles.label}>{label}</label>
       </div>
-      {children}
+      <div className={styles.groupedFieldFieldsWrapper}>
+        {children}
+      </div>
     </div>
   );
 };
