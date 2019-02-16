@@ -3,6 +3,37 @@ import { reduxForm, Form, Field } from 'redux-form';
 
 import './Form.css';
 
+const validate = values => {
+  const errors = {};
+
+  if (!values.name) {
+    errors.name = 'Required';
+  }
+
+  if (!values.recommendedAgeFrom) {
+    errors.recommendedAgeFrom = 'Required';
+  }
+
+  if (!values.recommendedAgeTo) {
+    errors.recommendedAgeTo = 'Required';
+  }
+
+  if (values.recommendedAgeFrom && values.recommendedAgeTo) {
+    let ageFrom = parseInt(values.recommendedAgeFrom, 10);
+    let ageTo = parseInt(values.recommendedAgeTo, 10);
+
+    if (ageTo < ageFrom) {
+      errors.age = "We think you've got the ages the wrong way around.";
+    }
+  }
+
+  if (!values.webpage) {
+    errors.webpage = 'Required';
+  }
+
+  return errors;
+};
+
 let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
   return (
     <>
@@ -45,7 +76,8 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
 AboutActivityForm = reduxForm({
   form: 'activity',
   destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true
+  forceUnregisterOnUnmount: true,
+  validate,
 })(AboutActivityForm);
 
 export default AboutActivityForm;
