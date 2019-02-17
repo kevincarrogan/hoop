@@ -5,72 +5,36 @@ import styles from './ActivitySummary.module.css';
 
 const ActivitySummary = ({ activity }) => {
   return <>
-    <h1>Activity Summary</h1>
+    <h1>Summary</h1>
 
-    <h2 className={styles.secondaryHeader}>Activity</h2>
+    <div className={styles.summaryDetailsWrapper}>
+      <div className={styles.activityDetails}>
+        <h2 className={styles.summaryDetailsTitle}>{activity.name}</h2>
+        <div className={styles.activityDetailsItem}><i class="fal fa-child" />{activity.recommendedAgeFrom} - {activity.recommendedAgeTo}</div>
+        <div className={styles.activityDetailsItem}><i class="fal fa-link" /><a href="/">{activity.webpage}</a></div>
+        {activity.phoneNumber &&
+          <div className={styles.activityDetailsItem}><i class="fal fa-phone" />{activity.phoneNumber}</div>
+        }
+      </div>
 
-    <dl className={styles.summaryDetails}>
-      <dt className={styles.summaryDetailsTitle}>Name</dt>
-      <dd className={styles.summaryDetailsDefinition}>{activity.name}</dd>
+      <div className={styles.addressDetails}>
+        <img width="180" src="/map.png" />
 
-      <dt className={styles.summaryDetailsTitle}>Recommended Age</dt>
-      <dd className={styles.summaryDetailsDefinition}>{activity.recommendedAgeFrom} - {activity.recommendedAgeTo}</dd>
-
-      <dt className={styles.summaryDetailsTitle}>Webpage</dt>
-      <dd className={styles.summaryDetailsDefinition}>{activity.webpage}</dd>
-
-      {activity.phoneNumber &&
-        <>
-          <dt className={styles.summaryDetailsTitle}>Phone Number</dt>
-          <dd className={styles.summaryDetailsDefinition}>{activity.phoneNumber}</dd>
-        </>
-      }
-    </dl>
-
-    <h2 className={styles.secondaryHeader}>Address</h2>
-
-    <dl className={styles.summaryDetails}>
-      <dt className={styles.summaryDetailsTitle}>Place Name</dt>
-      <dd className={styles.summaryDetailsDefinition}>{activity.placeName}</dd>
-
-      <dt className={styles.summaryDetailsTitle}>Postcode</dt>
-      <dd className={styles.summaryDetailsDefinition}>{activity.postcode}</dd>
-
-      {activity.buildingUnit &&
-        <>
-          <dt className={styles.summaryDetailsTitle}>Building Unit</dt>
-          <dd className={styles.summaryDetailsDefinition}>{activity.buildingUnit}</dd>
-        </>
-      }
-
-      {activity.buildingName &&
-        <>
-          <dt className={styles.summaryDetailsTitle}>Building Name</dt>
-          <dd className={styles.summaryDetailsDefinition}>{activity.buildingName}</dd>
-        </>
-      }
-
-      {activity.streetNumber &&
-        <>
-          <dt className={styles.summaryDetailsTitle}>Street Number</dt>
-          <dd className={styles.summaryDetailsDefinition}>{activity.streetNumber}</dd>
-        </>
-      }
-
-      {activity.streetName &&
-        <>
-          <dt className={styles.summaryDetailsTitle}>Street Name</dt>
-          <dd className={styles.summaryDetailsDefinition}>{activity.streetName}</dd>
-        </>
-      }
-
-      {activity.town &&
-        <>
-          <dt className={styles.summaryDetailsTitle}>Town</dt>
-          <dd className={styles.summaryDetailsDefinition}>{activity.town}</dd>
-        </>
-      }
-    </dl>
+        <div className={styles.addressDetailsWrapper}>
+          <div className={styles.summaryDetailsTitle}>{activity.placeName}</div>
+          {(activity.buildingUnit || activity.buildingName) &&
+            <div>{activity.buildingUnit} {activity.buildingName}</div>
+          }
+          {(activity.streetNumber || activity.streetName) &&
+            <div>{activity.streetNumber} {activity.streetName}</div>
+          }
+          {activity.town &&
+            <div>{activity.town}</div>
+          }
+          <div>{activity.postcode}</div>
+        </div>
+      </div>
+    </div>
   </>
 };
 

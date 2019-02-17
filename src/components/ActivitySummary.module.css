@@ -1,5 +1,11 @@
-.summaryDetails {
+.activityDetails {
   color: #25333d;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.activityDetails i {
+  margin-right: 8px;
 }
 
 .summaryDetailsTitle {
@@ -8,9 +14,21 @@
   line-height: 20px;
 }
 
-.summaryDetailsDefinition {
-  letter-spacing: -.15px;
-  line-height: 20px;
-  margin: 0;
-  margin-bottom: 14px;
+.activityDetailsItem {
+  margin-bottom: 4px;
+}
+
+.summaryDetailsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.addressDetails {
+  width: 180px;
+}
+
+@media (min-width: 728px) {
+  .summaryDetailsWrapper {
+    flex-direction: row;
+  }
 }
