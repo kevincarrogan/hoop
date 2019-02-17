@@ -2,12 +2,12 @@ const initialState = {
   currentStep: 1,
 };
 
-const reducer = (state=initialState, {type, payload}) => {
+const reducer = (state=initialState, {type, currentStep}) => {
   switch (type) {
     case 'SET_CURRENT_STEP': {
       return {
         ...state,
-        currentStep: payload.currentStep
+        currentStep,
       };
     }
     default:
