@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import AboutActivityForm from './AboutActivityForm';
 import AddressActivityForm from './AddressActivityForm';
@@ -36,5 +37,7 @@ class ActivityForm extends Component {
     );
   }
 }
+
+const mapStateToProps = ({})
 
 export default ActivityForm;
