@@ -1,0 +1,18 @@
+.h1 {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.copyActionWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.copyButton {
+  background-color: #00a5e6;
+  border-color: #00a5e6;
+  color: #fff;
+  line-height: 20px;
+  padding: 10px;
+}

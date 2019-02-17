@@ -2,9 +2,12 @@ import React from 'react';
 
 import { reduxForm, Form, Field } from 'redux-form';
 
+import Button from './Button.js';
 import { FormField } from './FormField.js';
 
 import './Form.css';
+
+import styles from './AddressActivityForm.module.css';
 
 const validate = values => {
   const errors = {};
@@ -21,61 +24,67 @@ const validate = values => {
 };
 
 let AddressActivityForm = ({ id, handleSubmit, onSubmit }) => (
-  <Form id={id} className="base-form" onSubmit={handleSubmit(onSubmit)}>
-    <Field
-      label="Place Name"
-      name="placeName"
-      component={FormField}
-      type="text"
-    />
+  <>
+    <h1 className={styles.h1}>Add the address</h1>
+    <div className={styles.copyActionWrapper}>
+      <Button className={styles.copyButton}>Copy from existing activity</Button>
+    </div>
+    <Form id={id} className="base-form" onSubmit={handleSubmit(onSubmit)}>
+      <Field
+        label="Place Name"
+        name="placeName"
+        component={FormField}
+        type="text"
+      />
 
-    <Field
-      label="Postcode"
-      name="postcode"
-      component={FormField}
-      type="text"
-    />
+      <Field
+        label="Postcode"
+        name="postcode"
+        component={FormField}
+        type="text"
+      />
 
-    <Field
-      label="Building Unit"
-      name="buildingUnit"
-      component={FormField}
-      type="text"
-      optional={true}
-    />
+      <Field
+        label="Building Unit"
+        name="buildingUnit"
+        component={FormField}
+        type="text"
+        optional={true}
+      />
 
-    <Field
-      label="Building Name"
-      name="buildingName"
-      component={FormField}
-      type="text"
-      optional={true}
-    />
+      <Field
+        label="Building Name"
+        name="buildingName"
+        component={FormField}
+        type="text"
+        optional={true}
+      />
 
-    <Field
-      label="Street Number"
-      name="streetNumber"
-      component={FormField}
-      type="text"
-      optional={true}
-    />
+      <Field
+        label="Street Number"
+        name="streetNumber"
+        component={FormField}
+        type="text"
+        optional={true}
+      />
 
-    <Field
-      label="Street Name"
-      name="streetName"
-      component={FormField}
-      type="text"
-      optional={true}
-    />
+      <Field
+        label="Street Name"
+        name="streetName"
+        component={FormField}
+        type="text"
+        optional={true}
+      />
 
-    <Field
-      label="Town"
-      name="town"
-      component={FormField}
-      type="text"
-      optional={true}
-    />
-  </Form>
+      <Field
+        label="Town"
+        name="town"
+        component={FormField}
+        type="text"
+        optional={true}
+      />
+    </Form>
+  </>
 );
 
 AddressActivityForm = reduxForm({
