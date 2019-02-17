@@ -10,23 +10,18 @@ class ActivityForm extends Component {
     super(props);
     this.nextStep = this.nextStep.bind(this);
     this.previousStep = this.previousStep.bind(this);
-
-    this.state = {
-      currentStep: 1
-    };
   }
 
   nextStep() {
-    this.setState({ currentStep: this.state.currentStep + 1 });
+    
   }
 
   previousStep() {
-    this.setState({ currentStep: this.state.currentStep - 1 });
+    
   }
 
   render() {
-    const { id } = this.props;
-    const { currentStep } = this.state;
+    const { id, currentStep } = this.props;
 
     return (
       <>
@@ -38,6 +33,6 @@ class ActivityForm extends Component {
   }
 }
 
-const mapStateToProps = ({})
+const mapStateToProps = ({activityFormWizard: {currentStep}}) => ({currentStep});
 
-export default ActivityForm;
+export default connect(mapStateToProps)(ActivityForm);

@@ -1,13 +1,13 @@
 const initialState = {
-  step: 1,
+  currentStep: 1,
 };
 
 const reducer = (state=initialState, {type, payload}) => {
   switch (type) {
-    case 'SET_STEP': {
+    case 'SET_CURRENT_STEP': {
       return {
         ...state,
-        step: payload.step
+        currentStep: payload.currentStep
       };
     }
     default:
