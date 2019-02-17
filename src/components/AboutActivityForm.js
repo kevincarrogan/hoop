@@ -1,6 +1,7 @@
 import React from 'react';
 import { reduxForm, Form, Field } from 'redux-form';
 import range from 'lodash.range';
+import validUrl from 'valid-url';
 
 import { GroupedField, FormField } from './FormField.js';
 
@@ -32,6 +33,10 @@ const validate = values => {
 
   if (!values.webpage) {
     errors.webpage = 'Required';
+  }
+
+  if (values.webpage && !validUrl.isUri(values.webpage)) {
+    errors.webpage = "You've not entered a valid webpage."
   }
 
   return errors;
