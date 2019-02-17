@@ -27,6 +27,10 @@
   padding: 0 12px;
 }
 
+.hasValue {
+  color: #000;
+}
+
 .instructions {
   color: #879299;
   letter-spacing: -.15px;

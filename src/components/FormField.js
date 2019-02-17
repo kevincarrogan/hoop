@@ -38,8 +38,9 @@ const FormField = ({
 
   switch (type) {
     case 'select':
-      inputElement = <select {...input} className={styles.select}>{children}</select>
-      break
+      const selectStyles = classNames(styles.select, {[styles.hasValue]: !!input.value});
+      inputElement = <select {...input} className={selectStyles}>{children}</select>;
+      break;
     default:
       inputElement = <input {...input} className={styles.input} placeholder={placeholder} id={input.name} type={type} />;
   }
