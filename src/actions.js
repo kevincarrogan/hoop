@@ -5,4 +5,10 @@ const setCurrentStep = currentStep => (
   }
 );
 
-export {setCurrentStep};
+const fetchAddress = () => (
+  {
+    type: 'FETCH_ADDRESS',
+  }
+);
+
+export {setCurrentStep, fetchAddress};

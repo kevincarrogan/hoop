@@ -2,6 +2,8 @@ import React from 'react';
 
 import { reduxForm, Form, Field } from 'redux-form';
 
+import ExistingAddressFetcher from '../containers/ExistingAddressFetcher';
+
 import Button from './Button.js';
 import { FormField } from './FormField.js';
 
@@ -27,7 +29,11 @@ let AddressActivityForm = ({ id, handleSubmit, onSubmit }) => (
   <>
     <h1 className={styles.h1}>Add the address</h1>
     <div className={styles.copyActionWrapper}>
-      <Button className={styles.copyButton}>Copy from existing activity</Button>
+      <ExistingAddressFetcher>{
+        (fetchAddress) => (
+          <Button className={styles.copyButton} onClick={fetchAddress}>Copy from existing activity</Button>
+        )
+      }</ExistingAddressFetcher>
     </div>
     <Form id={id} className="base-form" onSubmit={handleSubmit(onSubmit)}>
       <Field
