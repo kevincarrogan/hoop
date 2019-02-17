@@ -1,9 +1,15 @@
 .button {
   border-radius: 4px;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -.32px;
   line-height: 24px;
   text-align: center;
   padding: 8px 16px;
+}
+
+.button[disabled] {
+    cursor: default;
+    opacity: .6;
 }

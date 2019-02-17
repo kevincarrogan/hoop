@@ -30,6 +30,8 @@ class ActivityFormStepDataSource extends Component {
       formId: this.formId,
       nextStep: this.nextStep,
       previousStep: this.previousStep,
+      hasPreviousStep: currentStep > 1,
+      hasNextStep: currentStep < 3,
       currentStep,
     });
   }
