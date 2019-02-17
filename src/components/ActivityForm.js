@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-import { setCurrentStep } from '../actions';
 
 import AboutActivityForm from './AboutActivityForm';
 import AddressActivityForm from './AddressActivityForm';
@@ -12,17 +9,10 @@ class ActivityForm extends Component {
     super(props);
 
     this.nextStep = this.nextStep.bind(this);
-    this.previousStep = this.previousStep.bind(this);
   }
 
   nextStep() {
-    const nextStep = this.props.currentStep + 1;
-    this.props.dispatch(setCurrentStep(nextStep));
-  }
-
-  previousStep() {
-    const previousStep = this.props.currentStep - 1;
-    this.props.dispatch(setCurrentStep(previousStep));
+    this.props.nextStep();
   }
 
   render() {
@@ -38,6 +28,4 @@ class ActivityForm extends Component {
   }
 }
 
-const mapStateToProps = ({activityFormWizard: {currentStep}}) => ({currentStep});
-
-export default connect(mapStateToProps)(ActivityForm);
+export default ActivityForm;

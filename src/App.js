@@ -4,18 +4,26 @@ import Header from './components/Header';
 import MainSection from './components/MainSection';
 import Footer from './components/Footer';
 
+import ActivityFormStepDataSource from './containers/ActivityFormStepDataSource';
 import ActivityForm from './components/ActivityForm';
 
 class App extends Component {
   render() {
-    const activityFormId = 'activity-form';
     return (
       <main>
         <Header />
         <MainSection>
-          <ActivityForm id={activityFormId} />
+          <ActivityFormStepDataSource>{
+            ({formId, currentStep, nextStep}) => (
+              <ActivityForm
+                id={formId}
+                currentStep={currentStep}
+                nextStep={nextStep}
+              />
+            )
+          }</ActivityFormStepDataSource>
         </MainSection>
-        <Footer formId={activityFormId} />
+        <Footer />
       </main>
     );
   }
