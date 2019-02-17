@@ -47,10 +47,12 @@ const FormField = ({
 
   return (
     <div className={className}>
-      <div className={styles.labelWrapper}>
-        <label className={styles.label} htmlFor={input.name}>{label}</label>
-        {optional && <span className={styles.optional}>Optional</span>}
-      </div>
+      {label &&
+        <div className={styles.labelWrapper}>
+          <label className={styles.label} htmlFor={input.name}>{label}</label>
+          {optional && <span className={styles.optional}>Optional</span>}
+        </div>
+      }
       {instructions && <p className={styles.instructions}>{instructions}</p>}
       {inputElement}
       {error && touched && <div className={styles.errorMessage}>{error}</div>}
