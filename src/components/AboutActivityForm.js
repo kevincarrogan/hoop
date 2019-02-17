@@ -3,7 +3,7 @@ import { reduxForm, Form, Field } from 'redux-form';
 import range from 'lodash.range';
 import validUrl from 'valid-url';
 
-import { GroupedField, FormField } from './FormField.js';
+import { HalfWidthField, GroupedField, FormField } from './FormField.js';
 
 import './Form.css';
 
@@ -94,13 +94,15 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
           type="text"
         />
 
-        <Field
-          label="Activity Phone Number"
-          name="phoneNumber"
-          component={FormField}
-          type="text"
-          optional={true}
-        />
+        <HalfWidthField>
+          <Field
+            label="Activity Phone Number"
+            name="phoneNumber"
+            component={FormField}
+            type="text"
+            optional={true}
+          />
+        </HalfWidthField>
       </Form>
     </>
   );

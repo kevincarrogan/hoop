@@ -75,6 +75,18 @@
   margin-bottom: 28px;
 }
 
+.halfWidthFieldWrapper {
+  display: flex;
+}
+
+.halfWidthFieldWrapper .formField {
+  width: 100%;
+}
+
+.halfWidthSpacer {
+  width: 0%;
+}
+
 @media (min-width: 728px) {
   .groupedFieldFieldsWrapper {
     display: flex;
@@ -87,5 +99,14 @@
 
   .groupedFieldFieldsWrapper .formField:last-of-type {
     margin-right: 0;
+  }
+
+  .halfWidthFieldWrapper .formField {
+    margin-right: 24px;
+    width: 50%;
+  }
+
+  .halfWidthSpacer {
+    width: 50%;
   }
 }

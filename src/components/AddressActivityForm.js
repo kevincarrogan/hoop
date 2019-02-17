@@ -5,7 +5,7 @@ import { reduxForm, Form, Field } from 'redux-form';
 import ExistingAddressFetcher from '../containers/ExistingAddressFetcher';
 
 import Button from './Button.js';
-import { FormField } from './FormField.js';
+import { HalfWidthField, FormField } from './FormField.js';
 
 import './Form.css';
 
@@ -43,20 +43,24 @@ let AddressActivityForm = ({ id, handleSubmit, onSubmit }) => (
         type="text"
       />
 
-      <Field
-        label="Postcode"
-        name="postcode"
-        component={FormField}
-        type="text"
-      />
+      <HalfWidthField>
+        <Field
+          label="Postcode"
+          name="postcode"
+          component={FormField}
+          type="text"
+        />
+      </HalfWidthField>
 
-      <Field
-        label="Building Unit"
-        name="buildingUnit"
-        component={FormField}
-        type="text"
-        optional={true}
-      />
+      <HalfWidthField>
+        <Field
+          label="Building Unit"
+          name="buildingUnit"
+          component={FormField}
+          type="text"
+          optional={true}
+        />
+      </HalfWidthField>
 
       <Field
         label="Building Name"

@@ -4,6 +4,15 @@ import classNames from 'classnames';
 
 import styles from './FormField.module.css';
 
+const HalfWidthField = ({children}) => {
+  return (
+    <div className={styles.halfWidthFieldWrapper}>
+      {children}
+      <div className={styles.halfWidthSpacer} />
+    </div>
+  );
+};
+
 const GroupedField = ({label, children}) => {
   return (
     <div className={styles.groupedField}>
@@ -60,4 +69,4 @@ const FormField = ({
   );
 };
 
-export {GroupedField, FormField};
+export {HalfWidthField, GroupedField, FormField};
