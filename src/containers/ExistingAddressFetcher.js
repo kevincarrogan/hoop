@@ -19,6 +19,4 @@ class ExistingAddressFetcher extends Component {
   }
 }
 
-const mapStateToProps = () => {};
-
-export default connect(mapStateToProps)(ExistingAddressFetcher);
+export default connect()(ExistingAddressFetcher);

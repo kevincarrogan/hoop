@@ -5,10 +5,16 @@ const setCurrentStep = currentStep => (
   }
 );
 
-const fetchAddress = () => (
-  {
-    type: 'FETCH_ADDRESS',
-  }
-);
+const fetchAddress = () => (dispatch) => {
+  dispatch({type: 'FETCHING_ADDRESS'});
+  fetch('http://localhost:8000/places/')
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      const address = data.places[0];
+      dispatch({type: 'SET_ADDRESS', address})
+    });
+};
 
 export {setCurrentStep, fetchAddress};
