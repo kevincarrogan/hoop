@@ -18,7 +18,7 @@ const ActivitySummary = ({ activity }) => {
       </div>
 
       <div className={styles.addressDetails}>
-        <img width="180" src="/map.png" />
+        <img alt="Map for below address" width="180" src="/map.png" />
 
         <div className={styles.addressDetailsWrapper}>
           <div className={styles.summaryDetailsTitle}>{activity.placeName}</div>
