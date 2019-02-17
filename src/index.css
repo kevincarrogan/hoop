@@ -29,6 +29,15 @@ section h1 {
   text-align: center;
 }
 
+section h2 {
+  color: #25333d;
+  font-size: 20px;
+  letter-spacing: .33px;
+  line-height: 29px;
+  margin: 0;
+  margin-bottom: 14px;
+}
+
 @media (min-width: 728px) {
   body {
     background-color: #F1F3F5;

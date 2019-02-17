@@ -1,0 +1,16 @@
+.summaryDetails {
+  color: #25333d;
+}
+
+.summaryDetailsTitle {
+  font-weight: bold;
+  letter-spacing: -.15px;
+  line-height: 20px;
+}
+
+.summaryDetailsDefinition {
+  letter-spacing: -.15px;
+  line-height: 20px;
+  margin: 0;
+  margin-bottom: 14px;
+}
