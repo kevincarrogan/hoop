@@ -66,7 +66,7 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
             <option value="">From</option>
             {
               range(minAge, maxAge + 1).map(age => {
-                return <option value={age}>{age}</option>
+                return <option key={age} value={age}>{age}</option>
               })
             }
           </Field>
@@ -79,7 +79,7 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
             <option value="">To</option>
             {
               range(minAge, maxAge + 1).map(age => {
-                return <option value={age}>{age}</option>
+                return <option key={age} value={age}>{age}</option>
               })
             }
           </Field>
