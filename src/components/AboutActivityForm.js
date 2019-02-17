@@ -1,5 +1,6 @@
 import React from 'react';
 import { reduxForm, Form, Field } from 'redux-form';
+import range from 'lodash.range';
 
 import { GroupedField, FormField } from './FormField.js';
 
@@ -37,6 +38,8 @@ const validate = values => {
 };
 
 let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
+  const minAge = 1;
+  const maxAge = 11;
   return (
     <>
       <h1>About your activity</h1>
@@ -56,16 +59,11 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
             grouped={true}
           >
             <option value="">From</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
+            {
+              range(minAge, maxAge + 1).map(age => {
+                return <option value={age}>{age}</option>
+              })
+            }
           </Field>
           <Field
             name="recommendedAgeTo"
@@ -74,16 +72,11 @@ let AboutActivityForm = ({ id, handleSubmit, onSubmit }) => {
             grouped={true}
           >
             <option value="">To</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
+            {
+              range(minAge, maxAge + 1).map(age => {
+                return <option value={age}>{age}</option>
+              })
+            }
           </Field>
         </GroupedField>
 
